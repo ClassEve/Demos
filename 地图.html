@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="container" style="width:500px; height:300px"></div>
+<script type="text/javascript" src="http://webapi.amap.com/maps?v=1.3&key=1288b665c7c6c536f3dd0b7de529363b"></script>
+<script>
+    var map = new AMap.Map('container',{
+        zoom: 20,
+        center: [114.157339,22.604933]
+    });
+    var marker = new AMap.Marker({
+        map: map,
+        position: [114.157339,22.604933]
+    });
+</script>
+</body>
+</html>

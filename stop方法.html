@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .d{
+            width:200px;
+            background: #000;
+        }
+        .d2{
+            border:1px solid #000;
+            width:200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="d">shdfsdhjk</div>
+    <button class="b1">开始</button>
+    <button class="b2">停止</button>
+    <div class="d2">这是我</div>
+<script src="js/jquery-1.8.2.min.js"></script>
+<script>
+
+    $('.b1').click(function(){
+        $('.d').animate({
+            width:'600px'
+        },5000)
+    });
+    $('.b2').click(function(){
+        $('.d').stop(false,true);
+    });
+
+    // todo ****  stop(a,b),
+    // todo a,b = true时，动画瞬间停在动画应该结束的位置
+    // todo a = true，b = false时，动画停在当前位置，大部分都用这个
+    // todo a = false,b = true时，动画瞬间停在动画应该结束的位置
+    // todo 第一个参数的意思是是否清空动画序列，也就是stop的是当前元素的动画效果还是停止后面附带的所有动画效果，一般为false，跳过当前动画效果，执行下一个动画效果；
+    // todo 第二个参数是是否将当前动画效果执行到最后，意思就是停止当前动画的时候动画效果刚刚执行了一般，这个时候想要的是动画执行之后的效果，那么这个参数就为true。否则动画效果就会停在stop执行的时候
+    $('.d2').hover(function(){$(this).stop(true,false).animate({width:'1000px'},2000)},function(){
+        $(this).stop(true,false).animate({width:'200px'},2000);
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            padding:0;
+            margin:0;
+            list-style:none;
+            border:0;
+        }
+        /*第一种方法*/
+        .box {
+            width:200px;
+            height:100px;
+            margin:20px auto;
+            position:relative;
+        }
+        .boxcontent {
+            width:198px;
+            height:98px;
+            border:1px solid #ccc;
+        }
+        .border-arrow {
+            width:0;
+            height:0;
+            font-size:0;
+            line-height:0;
+            position:absolute;
+            left:10px;
+            top:-16px;
+        }
+        .border-arrow em,.border-arrow ins {
+            width:0;
+            height:0;
+            display:block;
+            position:absolute;
+            border:8px solid transparent;
+            border-style:dashed dashed solid dashed;
+        }
+        .border-arrow em {
+            border-bottom-color:#ccc;
+        }
+        .border-arrow ins {
+            border-bottom-color:#fff;
+            top:1px;
+        }
+        /*第二种方法*/
+        .second-arrow:before,.second-arrow:after {
+            width:0;
+            height:0;
+            display:block;
+            position:absolute;
+            content:"";
+            border:solid transparent;
+            line-height:0;
+        }
+        .second-arrow:before {
+            left:10px;
+            top:-16px;
+            border-bottom:solid #ccc;
+            border-width:8px;
+        }
+        .second-arrow:after {
+            left:9px;
+            top:-15px;
+            border-bottom:solid #fff;
+            border-width:9px;
+        }
+        /*第三种方法*/
+        .third-arrow,.third-arrow-inner {
+            width:0;
+            height:0;
+            position:absolute;
+            border:8px solid transparent;
+        }
+        .third-arrow {
+            left:10px;
+            top:-16px;
+            border-bottom:8px solid #ccc;
+        }
+        .third-arrow-inner {
+            left:-8px;
+            top:-7px;
+            border-bottom:8px solid #fff;
+        }
+
+    </style>
+</head>
+<body>
+<!-- 第一种方法 -->
+<div class="box">
+    <div class="boxcontent"></div>
+    <div class="border-arrow"> <em></em> <ins></ins> </div>
+</div>
+<!-- 第二种方法 -->
+<div class="box">
+    <div class="boxcontent"></div>
+    <div class="second-arrow"></div>
+</div>
+<!-- 第三种方法 -->
+<div class="box">
+    <div class="boxcontent"></div>
+    <div class="third-arrow">
+        <div class="third-arrow-inner"></div>
+    </div>
+</div>
+
+<script src="js/jquery-1.8.2.min.js"></script>
+<script>
+
+</script>
+</body>
+</html>

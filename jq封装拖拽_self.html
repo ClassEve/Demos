@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            height:100px;
+            width:100px;
+            background: #000;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+<div class="d1"></div>
+<div class="d2"></div>
+<div class="d3"></div>
+<script src="js/jquery-1.8.2.min.js"></script>
+<script>
+    (function () {
+        function Drag(selector) {
+            this.elem = $(selector);
+            //元素的初始位置
+            this.sourceX = 0;
+            this.sourceY = 0;
+
+            //鼠标开始按下时的位置
+            this.startX = 0;
+            this.startY = 0;
+
+            //初始化
+            this.init();
+        }
+        Drag.prototype = {
+            constructor: Drag,
+            //获得元素初始位置的方法
+            getPos: function () {
+                var pos = {
+                    x: parseInt(this.elem.css('left')),
+                    y: parseInt(this.elem.css('top'))
+                };
+                return pos;
+            },
+
+            //设置元素位置的方法
+            setPos: function (x,y) {
+                this.elem.css({
+                    left: x,
+                    top:y
+                })
+            },
+            //开始绑定事件
+            init: function () {
+                var _self = this;
+                var pos = '';
+                this.elem.on('mousedown',start);
+                function start(e) {
+                    _self.startX = e.pageX;
+                    _self.startY = e.pageY;
+                    pos = _self.getPos();
+                    $(window).on('mousemove',move);
+                    $(window).on('mouseup',end);
+                }
+                function move(e) {
+                    var distanceX = e.pageX - _self.startX;
+                    var distanceY = e.pageY - _self.startY;
+                    _self.setPos(pos.x + distanceX,pos.y + distanceY);
+                }
+                function end() {
+                    $(window).off('mousemove',move);
+                    $(window).off('mouseup',end);
+                }
+            }
+        }
+        window.Drag = Drag;
+    })();
+
+
+    (function ($) {
+        $.fn.extend({
+            drag:function () {
+                new Drag(this[0]);
+                return this;
+            }
+        })
+    })(jQuery);
+    new Drag('.d1');
+    new Drag('.d2');
+    $('.d3').drag().css('width','300px');
+</script>
+</body>
+</html>

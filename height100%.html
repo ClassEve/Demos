@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            height:3000px;
+        }
+        .d1{
+            height:500px;
+            background: #000;
+            width:500px;
+            
+        }
+        .d2{
+            height:100%;
+            width:50%;
+            background: #fff;
+        }
+        ul{
+            background: #ea9220;
+            padding:30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="d1" data-code="1" val="1">
+        <div class="d2" style="display: none">shkfhsdjkl</div>
+    </div>
+
+    <ul>
+        <li>123</li>
+        <li>456</li>
+        <li>789</li>
+        <li>qqq</li>
+        <li>www</li>
+    </ul>
+<script src="js/jquery-1.8.2.min.js"></script>
+<script>
+    $('.d1').after('<p>在后面添加</p>');
+    $('<p>倒过来在后面添加</p>').insertAfter('.d1');
+
+    $('ul').on('click','li',function (e) {
+        console.log(e.target);
+        console.log(this);
+    });
+    $('body').click(function (e) {
+        e.stopPropagation();
+        alert(e.which);
+        e.target   //永远是当前点击的元素   this会在事件冒泡中改变
+    })
+</script>
+</body>
+</html>

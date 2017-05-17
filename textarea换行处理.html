@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
+    <style>
+        .d1{
+            background: #ccc;
+            height:700px;
+            width:100%;
+            position: relative;
+        }
+        .d2{
+            width:100%;
+            background: #000;
+            position: fixed;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<textarea name="" id="d" cols="30" rows="10"></textarea>
+<textarea name="" id="d1" cols="30" rows="10"></textarea>
+<p id="p"></p>
+<button id="b">点我</button>
+<script src="js/jquery.min.js"></script>
+<script>
+    $('#b').click(function () {
+        var newString  = $('#d').val().replace(/\n/g, '_@').replace(/\r/g, '_#');
+        newString = newString.replace(/_#_@/g, '<br/>');//IE7-8
+        newString = newString.replace(/_@/g, '<br/>');//IE9、FF、chrome
+        newString = newString.replace(/\s/g, '&nbsp;');//空格处理
+        $('#p').html(newString);
+    })
+</script>
+</body>
+</html>

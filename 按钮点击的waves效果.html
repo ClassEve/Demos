@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/waves.css">
+    <style>
+        #colored-button .btn { color: #fff; }
+        #colored-button a,
+        #colored-button a:hover { background: #01BCFF; }
+        #colored-button button,
+        #colored-button button:hover { background: #1bb556; }
+        #colored-button input,
+        #colored-button input:hover { background: #ff4f0f; }
+        .d1{
+            width:300px;
+            height:200px;
+            text-align: center;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <p class="text-center">
+        <a class="flat-buttons">Button A</a>
+        <button class="flat-buttons">Button B</button>
+        <input class="flat-buttons" type="submit" value="Button C">
+    </p>
+
+    <p id="colored-button" class="text-center">
+        <a class="btn float-buttons">Button A</a>
+        <button class="btn float-button-light">Button B</button>
+        <input class="btn float-buttons" type="submit" value="Button C">
+    </p>
+    <div class="d1">点我</div>
+<script src="js/jquery-1.8.2.min.js"></script>
+    <script src="js/waves.js"></script>
+<script>
+    Waves.attach('.flat-buttons', ['waves-button']);
+    Waves.attach('.float-buttons', ['waves-button', 'waves-float']);
+    Waves.attach('.float-button-light', ['waves-button', 'waves-float', 'waves-light']);
+    Waves.attach('.d1');
+    Waves.init();
+</script>
+</body>
+</html>

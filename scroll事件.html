@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            height:3000px;
+
+        }
+        .d{
+            margin-top: 1000px;
+            height:200px;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <div class="d">这里是变色条</div>
+</div>
+<script src="js/jquery-1.8.2.min.js"></script>
+<script>
+    var x = 0;
+    $(window).scroll(function () {
+        //todo ****这里的scrollY代表着已经滚动上去的页面长度
+        console.log(scrollX+":"+scrollY);
+        console.log(x+=1);
+        if(scrollY >=500 && scrollY<=800){
+            $('.d').css('background','red');
+        }else{
+            $('.d').css('background','#fff');
+        }
+    })
+</script>
+</body>
+</html>

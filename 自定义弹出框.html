@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .cover{
+            position: fixed;
+            top:0;
+            left:0;
+            right:0;
+            bottom:0;
+            background: rgba(0,0,0,.3);
+            z-index: 1000;
+        }
+        .alertBox{
+            position: fixed;
+            left:50%;
+            top:40%;
+            transform: translate(-50%,-50%);
+            background: #fff;
+            z-index:2000;
+        }
+    </style>
+</head>
+<body>
+    <button class="b" onclick="msg('这是一段正经的提示')">点我出现弹出框</button>
+<script src="js/jquery-1.8.2.min.js"></script>
+<script>
+    function msg(txt) {
+        var cover = $('<div class="cover"></div>');    //遮盖框
+        var alertBox = $('<div class="alertBox"></div>');
+        var title = $('<p class="content">操作提示</p>');    //内容标题
+        var content = $('<p class="content">'+txt+'</p>');  //文字内容
+        var foot = $('<div class="alertFoot"></div>'); //foot
+        var confirm = $('<a>确定</a>');
+        confirm.click(function () {
+           $('.cover').remove();
+           $(this).parents('.alertBox').remove();
+        });
+        alertBox.append(title);
+        alertBox.append(content);
+        foot.append(confirm);
+        alertBox.append(foot);
+        $('body').append(alertBox);
+        $('body').append(cover);
+    }
+    var = $()
+</script>
+</body>
+</html>

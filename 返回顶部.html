@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+    </style>
+</head>
+<body>
+
+<h1>这是顶部</h1>
+<div style="height: 10000px;background: linear-gradient(#ffffff,#000000);"></div>
+<button id="btn">点我回到顶部</button>
+<script src="js/jquery-1.8.2.min.js"></script>
+<script>
+    btn.onclick = function () {
+        var scrollTop = document.body.scrollTop;
+        var speed = 0;
+        var timer = setInterval(function () {
+            speed += 5;
+            scrollTop -= speed;
+            document.body.scrollTop = scrollTop;
+            if(document.body.scrollTop <= 0){
+                clearInterval(timer);
+            }
+        },17);
+    }
+</script>
+</body>
+</html>

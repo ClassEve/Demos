@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin:0px;
+            padding:0px;
+        }
+        .light{
+            margin-top:200px;
+            margin-left: 200px;
+            width:310px;
+            height:100px;
+            position:absolute;
+            perspective:500px;
+        }
+        .light .stage{
+            position:relative;
+            width:310px;
+            height:100px;
+            transform-style:preserve-3d;
+            -webkit-transition: all 0.8s;
+        }
+        .light .stage .image1{
+            width:310px;
+            height:100px;
+            position:absolute;
+            -webkit-transform:translateZ(50px) ;
+            -webkit-transition: all 0.8s;
+            background: #000;
+        }
+        .light .stage .image2{
+            width:310px;
+            height:100px;
+            position:absolute;
+            -webkit-transition: all 0.8s;
+            -webkit-transform: rotateX(-90deg) translateZ(50px);
+            background: red;
+        }
+        .light .stage:hover{
+            -webkit-transform: rotateX(90deg);
+        }
+    </style>
+</head>
+<body>
+<div class="light">
+    <div class="stage">
+        <div class="image1"></div>
+        <div class="image2"></div>
+    </div>
+</div>
+<script src="js/jquery-1.8.2.min.js"></script>
+<script>
+
+</script>
+</body>
+</html>

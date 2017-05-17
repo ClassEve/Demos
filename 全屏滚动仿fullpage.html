@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *, *:after, *:before {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            position: relative;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            min-width: 320px;
+            background: #fff;
+        }
+
+        .box {
+            position: absolute;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+            -webkit-transition: all 1s cubic-bezier(0.745, -0.015, 0.22, 0.995);
+            transition: all 1s cubic-bezier(0.745, -0.015, 0.22, 0.995);
+            -webkit-transition-delay: 0.8s;
+            transition-delay: 0.8s;
+        }
+        .box ul {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            text-align: center;
+            width: 80vw;
+        }
+        .box li {
+            display: inline-block;
+            vertical-align: middle;
+            list-style: none;
+            width: 10vw;
+            height: 10vw;
+            margin: 0 20px;
+            background: #fff;
+            text-align: center;
+            text-transform: uppercase;
+            font-size: 2em;
+            -webkit-transition: all 0.8s cubic-bezier(0.63, 0.07, 0.26, 0.93);
+            transition: all 0.8s cubic-bezier(0.63, 0.07, 0.26, 0.93);
+        }
+        .box.current li {
+            opacity: 1;
+            -webkit-transform: translateY(0);
+            transform: translateY(0);
+        }
+        .box.current li:nth-child(1) {
+            -webkit-transition-delay: 1.7s;
+            transition-delay: 1.7s;
+        }
+        .box.current li:nth-child(2) {
+            -webkit-transition-delay: 1.8s;
+            transition-delay: 1.8s;
+        }
+        .box.current li:nth-child(3) {
+            -webkit-transition-delay: 1.9s;
+            transition-delay: 1.9s;
+        }
+        .box.current li:nth-child(4) {
+            -webkit-transition-delay: 2s;
+            transition-delay: 2s;
+        }
+        .box.under li {
+            opacity: 0;
+            -webkit-transform: translateY(200px);
+            transform: translateY(200px);
+        }
+        .box.under li:nth-child(1) {
+            -webkit-transition-delay: 0.1s;
+            transition-delay: 0.1s;
+        }
+        .box.under li:nth-child(2) {
+            -webkit-transition-delay: 0.2s;
+            transition-delay: 0.2s;
+        }
+        .box.under li:nth-child(3) {
+            -webkit-transition-delay: 0.3s;
+            transition-delay: 0.3s;
+        }
+        .box.under li:nth-child(4) {
+            -webkit-transition-delay: 0.4s;
+            transition-delay: 0.4s;
+        }
+        .box.above li {
+            opacity: 0;
+            -webkit-transform: translateY(-200px);
+            transform: translateY(-200px);
+        }
+        .box.above li:nth-child(1) {
+            -webkit-transition-delay: 0.1s;
+            transition-delay: 0.1s;
+        }
+        .box.above li:nth-child(2) {
+            -webkit-transition-delay: 0.2s;
+            transition-delay: 0.2s;
+        }
+        .box.above li:nth-child(3) {
+            -webkit-transition-delay: 0.3s;
+            transition-delay: 0.3s;
+        }
+        .box.above li:nth-child(4) {
+            -webkit-transition-delay: 0.4s;
+            transition-delay: 0.4s;
+        }
+
+        .box_1 {
+            background: -webkit-linear-gradient(left, rgba(210, 165, 95, 1), rgba(67, 76, 106, 1));
+            background: linear-gradient(90deg, rgba(210, 165, 95, 1), rgba(67, 76, 106, 1));
+            z-index: 1;
+            -webkit-transform: translateY(0vh);
+            transform: translateY(0vh);
+        }
+
+        .box_2 {
+            background: -webkit-linear-gradient(left, rgba(150, 181, 211, 1), rgba(81, 90, 61, 1));
+            background: linear-gradient(90deg, rgba(150, 181, 211, 1), rgba(81, 90, 61, 1));
+            z-index: 2;
+            -webkit-transform: translateY(100vh);
+            transform: translateY(100vh);
+        }
+
+        .box_3 {
+            background: -webkit-linear-gradient(left, rgba(174, 184, 157, 1), rgba(179, 188, 207, 1));
+            background: linear-gradient(90deg, rgba(174, 184, 157, 1), rgba(179, 188, 207, 1));
+            z-index: 3;
+            -webkit-transform: translateY(200vh);
+            transform: translateY(200vh);
+        }
+
+        .box_4 {
+            background: -webkit-linear-gradient(left, rgba(113, 161, 86, 1), rgba(4, 158, 45, 1));
+            background: linear-gradient(90deg, rgba(113, 161, 86, 1), rgba(4, 158, 45, 1));
+            z-index: 4;
+            -webkit-transform: translateY(300vh);
+            transform: translateY(300vh);
+        }
+
+        .box_5 {
+            background: -webkit-linear-gradient(left, rgba(93, 37, 35, 1), rgba(81, 158, 28, 1));
+            background: linear-gradient(90deg, rgba(93, 37, 35, 1), rgba(81, 158, 28, 1));
+            z-index: 5;
+            -webkit-transform: translateY(400vh);
+            transform: translateY(400vh);
+        }
+
+    </style>
+</head>
+<body>
+<div class="box box_1">
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
+<div class="box box_2 under">
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
+<div class="box box_3 under">
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
+<div class="box box_4 under">
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
+<div class="box box_5 under">
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
+<script src="js/jquery-1.8.2.min.js"></script>
+<script>
+'use strict';
+
+function hasClass(el, className) {
+    if (el.classList)
+        return el.classList.contains(className);
+    else
+        return !!el.className.match(new RegExp('(\\s|^)' + className + '(\\s|$)'));
+}
+
+function addClass(el, classNames) {
+    classNames = classNames.split(' ')
+    if (el.classList)
+        classNames.forEach((classname) => el.classList.add(classname))
+    else if (!hasClass(el, className))
+        classNames.forEach((classname) => el.className += " " + classname)
+}
+
+function removeClass(el, className) {
+    if (el.classList)
+        el.classList.remove(className);
+    else if (hasClass(el, className)) {
+        var reg = new RegExp('(\\s|^)' + className + '(\\s|$)');
+        el.className = el.className.replace(reg, ' ');
+    }
+}
+
+;
+(function() {
+    let lastAnimation = 0,
+        sections = Array.prototype.slice.call(document.querySelectorAll('.box')),
+        currentSection = 0,
+        len = sections.length
+
+    const handleScroll = (e) => {
+        e.preventDefault()
+
+        let timeNow = Date.now(),
+            delta = e.deltaY,
+            newSection
+
+        if (timeNow - lastAnimation < 2000) {
+            return;
+        }
+
+        if (deltaY < 0) {
+            // Up
+            newSection = (currentSection > 0) ? currentSection - 1 : currentSection
+        } else {
+            // Down
+            newSection = (currentSection < len - 1) ? currentSection + 1 : currentSection
+        }
+
+        if (currentSection !== newSection) {
+            // newSection is currentSection now
+            // And `old` currentSection is previousSection
+            if (currentSection < newSection) {
+                // Moving Down
+                removeClass(sections[newSection], 'under')
+                addClass(sections[newSection], 'current')
+                removeClass(sections[currentSection], 'current')
+                addClass(sections[currentSection], 'above')
+            } else {
+                // Moving Up
+                removeClass(sections[newSection], 'above')
+                addClass(sections[newSection], 'current')
+                removeClass(sections[currentSection], 'current')
+                addClass(sections[currentSection], 'under')
+            }
+
+            // Update currentSection
+            currentSection = newSection
+
+            sections.forEach((item, index) => {
+                // item.style.top = `${(index - currentSection) * 100}vh`
+                item.style.transform = `translateY(${(index - currentSection) * 100}vh)`
+            })
+        }
+
+        lastAnimation = timeNow
+    }
+
+    // first-load
+    addClass(sections[currentSection], 'current')
+
+    document.addEventListener('wheel', handleScroll)
+})()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

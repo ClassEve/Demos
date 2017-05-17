@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>回调函数</title>
+    <style>
+
+    </style>
+</head>
+<body>
+<button id="b" onclick="test()">点我看回调函数效果</button>
+<script src="js/jquery-1.8.2.min.js"></script>
+<script>
+    function a(callback) {
+        console.log('我是parent函数a');
+        console.log('调用回调函数');
+        callback();
+    }
+    function b() {
+        console.log('我是回调函数b');
+        console.log();
+    }
+    function c() {
+        console.log('我是回调函数c');
+    }
+
+    function test() {
+        a(b);
+        a(c);
+    }
+</script>
+</body>
+</html>

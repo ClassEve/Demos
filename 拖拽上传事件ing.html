@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #d{
+            display: block;
+            background: #ddd;
+            height:500px;
+            line-height:500px;
+            width:500px;
+            text-align: center;
+            margin:0 auto;
+            text-shadow: 1px  1px #fff;
+        }
+    </style>
+</head>
+<body>
+<form action="">
+    <div id="d">
+        上传文件
+    </div>
+    <p>文件名：
+        <span id="name"></span>
+    </p>
+    <p>图片预览：
+        <img id="img" src="" alt="" width="300" height="150">
+    </p>
+</form>
+<script src="js/jquery-1.8.2.min.js"></script>
+<script>
+$(document).on({
+    dragover:function (e) {     // 拖来拖去
+        e.preventDefault();
+    },
+    dragenter:function (e) {    //拖进
+        e.preventDefault();
+    },
+    dragend:function (e) {      //拖结束
+        e.preventDefault();
+    },
+    dragleave:function (e) {    //脱离
+        e.preventDefault()
+    },
+    drop:function (e) {         //拖后放下
+        e.preventDefault();
+    }
+});
+
+$(function () {
+    var box = document.getElementById('d');
+    box.addEventListener('drop', function (e) {
+        e.preventDefault();
+        var files = e.dataTransfer.files; //获取文件集合对象
+        if (files.length == 0)
+            return false;
+        else {
+            for (var i = 0; i < files.length; i++) {
+                var file = files[i];
+                if (file.type.indexOf('image') == -1) {
+                    alert('您上传的不是图片');
+                    return false;
+                }
+                var fileName = file.name;
+                var eName = $("<p>文件名：<span>" + fileName + "</span></p>");
+                $('form').append(eName);
+
+                var fileUrl = window.URL.createObjectURL(file);
+                var img = $("<p>图片预览：<img width='300' height='150' src='" + fileUrl + "'></p>");
+                $('form').append(img);
+                //创建一个新的form对象，将file加入form对象，然后上传form
+                var formData = new FormData();
+                formData.append('file', file);                // 往FormData对象添加一个File对象
+                formData.append('file[' + i + ']', file);   // 往FormData对象添加多个File对象
+            }
+            //异步上传formData,并显示进度条
+            var xhr = new XMLHttpRequest();     //创建xhr对象
+            xhr.upload.addEventListener('progress',
+                function uploadProgress(e) {
+                    // e有三个属性：
+                    // 1、lengthComputable – 可计算的已上传字节数
+                    // 2、total – 总的字节数
+                    // 3、loaded – 到目前为止上传的字节数
+                    if (e.lengthComputable) {
+                        percent.innerHTML = ' upload percent :' + Math.round((e.loaded / e.total) * 100) + '%';
+                    }
+                }, false); // false表示在事件冒泡阶段处理
+
+            xhr.upload.onload = function () {
+                percent.innerHTML = '上传完成';
+            };
+
+            xhr.upload.onerror = function () {
+                percent.innerHTML = '上传失败';
+            };
+
+            xhr.open('post', 'http://cross.site.com:8080/html5/FileUploadServlet', true); //打开接口
+            xhr.send(formData);            // 发送表单对象。
+        }
+    });
+});
+
+
+
+
+</script>
+</body>
+</html>

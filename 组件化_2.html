@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        span{
+            float:left;
+            width:100px;
+            height:35px;
+            line-height:35px;
+            text-align:center;
+            border:1px solid #ccc;
+            cursor:pointer;
+        }
+    </style>
+</head>
+<body>
+    <span id="radius1">111</span>
+    <span id="radius2">222</span>
+<script src="js/jquery-1.8.2.min.js"></script>
+<script>
+    function Radiu(radius1,radius2) {
+        this.n1 = document.querySelector(radius1);
+        this.n2 = document.querySelector(radius2);
+    }
+    Radiu.prototype = {
+        init:function (callback) {
+            this.click(callback);
+        },
+        click:function (callback) {
+            this.n1.onclick = function () {
+                callback(1,this.n1,this.n2);
+                console.log(this);
+            }.bind(this);
+            this.n2.onclick = function () {
+                callback(2,this.n2,this.n1);
+            }.bind(this);
+        }
+    };
+    
+    new Radiu('#radius1','#radius2').init(function (num, currentEl, siblingEl) {
+        currentEl.style.color = 'red';
+        siblingEl.style.color = '#000';
+    });
+</script>
+</body>
+</html>

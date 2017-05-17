@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body,div,ul,li,a,img{margin: 0;padding: 0;}
+        ul,li{list-style: none;}
+        a{text-decoration: none;}
+        #wrapper{position: relative;margin: 30px auto;width: 400px;height: 200px;}
+        #banner{position:relative;width: 400px;height: 200px;overflow: hidden;}
+        .imgList{position:relative;width:2000px;height:200px;z-index: 10;overflow: hidden;}
+        .imgList li{float:left;}
+        #prev,
+        #next{position: absolute;top:80px;z-index: 20;cursor: pointer;}
+        #prev{left: 10px;}
+        #next{right: 10px;}
+        #prev:hover,
+        #next:hover{opacity: 0.5;filter:alpha(opacity=50);}
+        .bg{position: absolute;bottom: 0;width: 400px;height: 40px;z-index:20;opacity: 0.4;filter:alpha(opacity=40);background: black;}
+        .infoList{position: absolute;left: 10px;bottom: 10px;z-index: 30;}
+        .infoList li{display: none;}
+        .infoList .infoOn{display: inline;color: white;}
+        .indexList{position: absolute;right: 10px;bottom: 5px;z-index: 30;}
+        .indexList li{float: left;margin-right: 5px;padding: 2px 4px;border: 2px solid #ea9220;background: grey;cursor: pointer;}
+        .indexList .indexOn{background: red;font-weight: bold;color: white;}
+    </style>
+</head>
+<body>
+<div id="wrapper">
+    <div id="banner">
+        <ul class="imgList">
+            <li><a href=""><img width="400px" height="200px" src="images/BingWallpaper-2016-11-04.jpg" alt=""></a></li>
+            <li><a href=""><img width="400px" height="200px" src="images/BingWallpaper-2016-11-04.jpg" alt=""></a></li>
+            <li><a href=""><img width="400px" height="200px" src="images/BingWallpaper-2016-11-04.jpg" alt=""></a></li>
+            <li><a href=""><img width="400px" height="200px" src="images/BingWallpaper-2016-11-04.jpg" alt=""></a></li>
+            <li><a href=""><img width="400px" height="200px" src="images/BingWallpaper-2016-11-04.jpg" alt=""></a></li>
+        </ul>
+        <i id="prev">左</i>
+        <i id="next">右</i>
+        <div class="bg"></div>
+        <ul class="infoList">
+            <li class="infoOn">1111111111</li>
+            <li>222222222</li>
+            <li>333333333</li>
+            <li>444444444</li>
+            <li>5555555</li>
+        </ul>
+        <ul class="indexList">
+            <li class="indexOn">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+    </div>
+</div> 
+
+<script src="js/jquery-1.8.2.min.js"></script>
+<script>
+//    todo 1、全局变量
+    var curIndex = 0,  //当前index
+        imgLen = $('.imgList li').length; //图片总数
+//    todo 2.自动切换定时器处理
+    var autoChange = setInterval(function () {
+        if(curIndex < imgLen-1){
+            curIndex ++;
+        }else{
+            curIndex = 0;
+        }
+//        调用变换处理函数
+        changeTo(curIndex);
+    },2000);
+
+//    todo 3.为左右箭头添加事件处理
+//    todo 左箭头划入划出处理
+    $('#prev').hover(function () {
+        //滑入清除定时器
+        clearInterval(autoChange);
+    },function () {
+        //滑出重置定时器
+        autoChangeAgain();
+    });
+//    左箭头点击处理
+    $('#prev').click(function () {
+        curIndex = (curIndex > 0) ? (--curIndex) : (imgLen - 1);
+        changeTo(curIndex);
+    });
+
+//    todo 右箭头划入处理
+    $('#next').hover(function () {
+        clearInterval(autoChange);
+    },function () {
+        autoChangeAgain();
+    });
+//    点击
+    $('#next').click(function () {
+        curIndex = (curIndex < imgLen -1 ) ? (++curIndex) : 0;
+        changeTo(curIndex);
+    });
+
+//    autoChangeAgain是一个重置定时器的函数
+    //清除定时器时候的重置定时器 封装
+    function autoChangeAgain() {
+        autoChange = setInterval(function () {
+                if(curIndex < imgLen-1){
+                    curIndex ++;
+                }else{
+                    curIndex = 0;
+                }
+                //调用变换处理函数
+                changeTo(curIndex);
+        },2000);
+    }
+
+//    changeTo就是一个图片切换处理的函数
+    function changeTo(num) {
+        var goLeft = num*400;
+        $('.imgList').animate({left: '-' + goLeft +'px'},500);
+        $('.infoList').find('li').removeClass('infoOn').eq(num).addClass('infoOn');
+        $('.indexList').find('li').removeClass('indexOn').eq(num).addClass('indexOn');
+    }
+
+//    todo 4.为右下角那几个li按钮绑定事件处理
+    $('.indexList li').each(function (index) {
+        $(this).hover(function () {
+            clearInterval(autoChange);
+            changeTo(index);
+            curIndex = index;
+        },function () {
+            autoChangeAgain();
+        })
+    })
+</script>
+</body>
+</html>

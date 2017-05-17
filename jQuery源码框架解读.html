@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+    </style>
+</head>
+<body>
+
+<script>
+    (function (Root) {
+        //构造函数
+        var jQuery = function (selector) {
+            //在jq中直接返回new过的实例，这里的init是jquery的真正构造函数
+            return new jQuery.fn.init(selector);
+        };
+
+        jQuery.fn = jQuery.prototype = {
+            constructor: jQuery,
+
+            version: '1.0.0',
+
+            init: function (selector) {
+                //这里有复杂的判断
+                var elem, selector;
+                elem = document.querySelector(selector);
+                this[0] = elem;
+                //return jQuery.makeArray(selector,this);
+                return this;
+            },
+            toArray:function () {},
+            get: function () {}
+
+        };
+
+        jQuery.fn.init.prototype = jQuery.fn;
+
+        //实现jq的两种拓展方式
+        jQuery.extend = jQuery.fn.extend = function (options) {
+            //这里很多判断
+            var target = this;
+            var copy;
+
+            for(name in options){
+                copy = options[name];
+                target[name] = copy;
+            }
+
+            return target;
+        }
+
+        //直接添加在构造函数上
+        jQuery.extend({
+            isFunction: function(){},
+            type: function(){}
+        });
+
+        //添加到圆形上
+        jQuery.fn.extend({
+            queue:function(){},
+            promise:function(){}
+        })
+
+        //$符号的又来
+        ROOT.jQuery = ROOT.$ = jQuery;
+
+    })(window);
+</script>
+</body>
+</html>

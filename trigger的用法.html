@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <div class="d1">dsjfiasdjlfjasdo;f</div>
+    <div onclick="xx()" class="d2">asifopasd</div>
+<script src="js/jquery-1.8.2.min.js"></script>
+<script>
+    function xx() {
+        alert(1);
+    }
+    $('.d1').click(function () {
+        $('.d2').trigger('click');
+    })
+</script>
+</body>
+</html>

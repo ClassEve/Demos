@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+    </style>
+</head>
+<body>
+<input type="button" value="确认对话框" onclick="test()">
+
+<input style="display: none" type="button" value="yes" name="yesButton" id="yesButton">
+<input style="display: none" type="button" value="no" name="noButton" id="noButton">
+
+<script src="js/jquery-1.8.2.min.js"></script>
+<script>
+    function showButton() {
+        $("input[name = 'yesButton']").show();
+        $("input[name = 'noButton']").show();
+    }
+    function hidenButton() {
+        $("input[name = 'yesButton']").hide();
+        $("input[name = 'noButton']").hide();
+
+        $("input[name = 'yesButton']").unbind();
+        $("input[name = 'noButton']").unbind();
+    }
+
+    function a(callback) {
+        alert('开始执行函数a');
+        showButton();
+        $("input[name = 'yesButton']").click(function () {
+            callback(true);
+            hidenButton();
+        });
+        $("input[name = 'noButton']").click(function () {
+            callback(false);
+            hidenButton();
+        });
+        alert('函数a执行结束');
+    }
+    function test() {
+        a(function (result) {
+            if(result)
+                alert(result+"点击了确定，执行删除操作");
+            else
+                alert(result+"点击了取消不做操作");
+        })
+    }
+</script>
+</body>
+</html>

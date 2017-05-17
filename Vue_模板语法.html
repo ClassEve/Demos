@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+    </style>
+</head>
+<body>
+<div v-if="isDis"> {{a+2}}</div>
+<button disabled>syhfksdhkl</button>
+<a :href="url1">sdfsd</a>
+<span @click="show">点我甭1</span>
+
+<div class="d1">{{a | capitalize}}</div>
+<script src="js/vue.js"></script>
+<script>
+    new Vue({
+        el:'div',
+        data:{
+            a: 1,
+            isDis:false
+        },
+        created:function () {
+            console.log(this.a);
+        }
+    })
+    new Vue({
+        el: 'a',
+        data: {
+            url1: 'baidu.com',
+            url2: 'hao123.com'
+        }
+    })
+    new Vue({
+        el: 'span',
+        methods: {
+            show: function () {
+                console.log(this);
+            }
+        }
+    })
+
+    new Vue({
+        el:'.d1',
+        data: {
+            a:'sdfsdfsdf'
+        },
+        filters: {
+            capitalize: function (value) {
+                if (!value) return '';
+                value = value.toString();
+                return value.charAt(0).toUpperCase() + value.slice(1)
+            }
+        }
+    })
+
+</script>
+</body>
+</html>

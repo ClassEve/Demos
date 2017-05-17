@@ -1,0 +1,66 @@
+/*省市区选择区域*/
+.areaChoice {
+    height: 275px;
+    position: fixed;
+    width: 100%;
+    bottom: -275px;
+    transition: 0.5s;
+    z-index: 100;
+}
+.areaChoice div {
+    border-bottom: 1px solid #dddddd;
+    height: 35px;
+    background: #fff;
+    padding-left: 10px;
+}
+.areaChoice div span {
+    float: left;
+    height: 33px;
+    line-height: 33px;
+    padding: 0 20px;
+    font-size: 15px;
+}
+.areaChoice div span.active {
+    border-bottom: 2px solid #ff9600;
+    color: #ff9600;
+}
+.areaChoice ul {
+    height: 250px;
+    overflow: scroll;
+    float: left;
+    left:100%;
+    position: absolute;
+    top: 35px;
+    background: #fff;
+    width: 100%;
+    transition: 0.5s;
+}
+.areaChoice ul li {
+    padding-left: 10px;
+    height: 35px;
+    line-height: 35px;
+    border-bottom: 1px solid #eeeeee;
+    font-size:14px;
+}
+.areaChoice ul li.active {
+    color: #ff9600;
+}
+.areaChoice ul.provinceChoice {
+    left: 0;
+    z-index: 100;
+}
+.areaChoice ul.cityChoice {
+    z-index: 200;
+}
+.areaChoice ul.districtChoice {
+    z-index: 300;
+}
+.mask{
+    position: fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background: rgba(0,0,0,.2);
+    display: none;
+}

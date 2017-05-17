@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        td,th{
+            border:1px solid #ccc;
+            text-align: center;
+        }
+    </style>
+</head>
+<body onkeydown="keyLogin();">
+<label for="">
+    输入px:
+    <input type="text" id="b" style="height: 50px;line-height: 50px;width: 300px;padding-left:10px;border-radius: 5px;border:1px solid #ccc;">
+</label>
+<table width="300px" style="border: 1px solid #ccc;border-collapse: collapse;margin-top: 15px;">
+    <thead>
+        <tr>
+            <th>PX</th>
+            <th>REM</th>
+        </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
+<button id="a" onclick="r()" style="margin-top: 30px;">转换</button>
+<script src="js/jquery-1.8.2.min.js"></script>
+<script>
+    function keyLogin(){
+        if (event.keyCode==13)   //回车键的键值为13
+        {
+            r();
+        }
+    }
+
+    function r() {
+        var px = $(b).val();
+        if(!px) return;
+        var rem = px / 40;
+        var tr = $('<tr></tr>');
+        var td = `<td>${px}</td><td>${rem}</td>`;
+        tr.html(td);
+        $('tbody').append(tr);
+        $(b).val('');
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+    </style>
+</head>
+<body>
+<form id="demoForm">
+    <fieldset>
+        <legend>用户登录</legend>
+        <p>
+            <label for="username">用户名</label>
+            <input type="text" id="username" name="username">
+        </p>
+        <p>
+            <label for="password">密码</label>
+            <input type="text" id="password" name="password">
+        </p>
+        <p>
+            <input type="submit" value="登录">
+        </p>
+    </fieldset>
+</form>
+<script src="js/jquery-1.8.2.min.js"></script>
+<script src="js/jquery.validate.js"></script>
+<script>
+    $(function(){
+       $('#demoForm').validate({
+           debug: true,
+           rules:{
+               username:{
+                   required:true,
+                   data:true
+               },
+               password:{
+                   required: true,
+                   minlength:2,
+                   maxlength:16
+               }
+           },
+           messages:{
+               username:{
+                   required:'必须填写用户名',
+                   rangelength:'请输入2到10之间的长度',
+                   data:'url不合法'
+               },
+               password:{
+                   required: '必须填写密码',
+                   minlength:'最小长度为2位',
+                   maxlength:'最大为16位'
+               }
+           }
+       })
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

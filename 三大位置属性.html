@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            height:3000px;
+            background: #eaeaea;
+        }
+    </style>
+</head>
+<body>
+<span></span>
+<div></div>
+<script src="js/jquery-1.8.2.min.js"></script>
+<script>
+    $(document).mousemove(function (e) {
+        // todo  pageX的坐标，是相对于整个文档流的坐标，如果文档流高3000，y会触碰到3000处
+        $('span').text(e.pageX+':'+e.pageY);
+        console.log(e.pageX+':'+e.pageY);
+        // todo clientX的坐标，是相对于浏览器视窗的坐标，坐标范围不会超出视窗大小
+        console.log(e.clientX+':'+e.clientY);
+        //todo  e.offsetX的坐标，是鼠标相对当前元素的相对位置，元素有多大，相对位置就有多大
+        console.log(e.offsetX+':'+e.offsetY);
+    })
+</script>
+</body>
+</html>

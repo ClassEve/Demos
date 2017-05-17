@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+    </style>
+</head>
+<body>
+
+<script>
+    var soldier = {
+        ID: 1,
+        '兵种': '美国大兵',
+        life: 42,
+        attack: 5,
+        run: function () {
+
+        },
+        die: function () {
+
+        }
+    }
+
+    var soldiers = [];
+    for (var i =100;i<100;i++){
+        var soldier = {
+            ID: i,
+            '兵种': '美国大兵',
+            life: 42,
+            attack: 5,
+            run: function () {
+
+            },
+            die: function () {
+
+            }
+        }
+        soldiers.push(soldier);
+    }
+
+    var soldierPro = {
+        '兵种': '美国大兵',
+        attack: 5,
+        run: function () {
+
+        },
+        die: function () {
+
+        }
+    }
+
+    var soldiers = [];
+    for(var i=0;i<100;i++){
+        var soldier = {
+            id:i,
+            life:Math.random() *100
+        }
+        soldier.__proto__ = soldierPro;
+        soldiers.push(soldier)
+    }
+
+
+    function soldier(ID) {   //这个方法就是一个NEW
+        var temp = {};  //自动创建临时对象
+
+        temp.__proto__ = soldier.prototype; //绑定原型
+        temp.ID = ID;   //你的id
+        temp.life = 42; //你的生命
+
+        return temp;    //给你返回
+
+    }
+
+
+    var soldierPro = {
+        '兵种': '美国大兵',
+        attack: 5,
+        run: function () {
+
+        },
+        die: function () {
+
+        }
+    }
+
+    var soldiers = [];
+    for (var i = 0; i< 100; i++){
+        soldiers.push(soldier(i));
+    }
+
+
+
+    //用new来写
+    function soldier(ID) {
+        this.ID = ID;
+        this.life = 42
+    }
+
+    soldierPro = {
+        '兵种': '美国大兵',
+        attack: 5,
+        run: function () {
+
+        },
+        die: function () {
+
+        }
+    }
+
+    var soldiers = [];
+
+    for(var i=0;i<100;i++){
+        soldiers.push(new soldier(i))
+    }
+
+
+
+
+
+
+</script>
+</body>
+</html>

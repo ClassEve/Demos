@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .yfLoadMask{
+            position: fixed;
+            top: 0;
+            left:0;
+            right:0;
+            bottom:0;
+            background: rgba(0,0,0,0.2);
+        }
+        .yfLoadBox{
+            position: absolute;
+            top:30%;
+            left:50%;
+            margin-left: -160px;
+            width:320px;
+            height:180px;
+            background: #fff;
+            box-shadow: 0 0 0px #fff;
+            -webkit-box-shadow: inset hoff voff blur color;
+            -moz-box-shadow: inset hoff voff blur color;
+            box-shadow: inset hoff voff blur color;
+            border-radius: 3px;
+            -webkit-animation:yfLoadingShadow 1s infinite alternate linear;
+            -o-animation:yfLoadingShadow 1s infinite alternate linear;
+            animation:yfLoadingShadow 1s infinite alternate linear;
+        }
+        .yfLoadBox p{
+            margin-top: 20px;
+            text-align: center;
+            font-size: 14px;
+            color: #333;
+        }
+        .yfLoadingContainer {
+            width: 90px;
+            height: 90px;
+            margin:20px auto 0;
+        }
+        .yfLoadingContainer>div{
+            width: 33%;
+            height: 33%;
+            background-color: orange;
+            float: left;
+            -webkit-animation: yfLoadingBlock 1.3s infinite ease-in-out;
+            animation: yfLoadingBlock 1.3s infinite ease-in-out;
+        }
+        .yfLoadingContainer .block4,
+        .yfLoadingContainer .block8{
+            -webkit-animation-delay: 0.1s;
+            -moz-animation-delay: 0.1s;
+            -o-animation-delay: 0.1s;
+            animation-delay: 0.1s;
+        }
+        .yfLoadingContainer .block1,
+        .yfLoadingContainer .block5,
+        .yfLoadingContainer .block9{
+            -webkit-animation-delay: 0.2s;
+            -moz-animation-delay: 0.2s;
+            -o-animation-delay: 0.2s;
+            animation-delay: 0.2s;
+        }
+        .yfLoadingContainer .block2,
+        .yfLoadingContainer .block6{
+            -webkit-animation-delay: 0.3s;
+            -moz-animation-delay: 0.3s;
+            -o-animation-delay: 0.3s;
+            animation-delay: 0.3s;
+        }
+        .yfLoadingContainer .block3{
+            -webkit-animation-delay: 0.4s;
+            -moz-animation-delay: 0.4s;
+            -o-animation-delay: 0.4s;
+            animation-delay: 0.4s;
+        }
+        @-webkit-keyframes yfLoadingBlock {
+            0%{
+                -webkit-transform: scale3D(1,1,1);
+                -moz-transform: scale3D(1,1,1);
+                -ms-transform: scale3D(1,1,1);
+                -o-transform: scale3D(1,1,1);
+                transform: scale3D(1,1,1);
+            }
+            35% {
+                -webkit-transform: scale3D(0,0,1);
+                -moz-transform: scale3D(0,0,1);
+                -ms-transform: scale3D(0,0,1);
+                -o-transform:scale3D(0,0,1) ;
+                transform:scale3D(0,0,1);
+            }
+            70%{
+                -webkit-transform: scale3D(1,1,1);
+                -moz-transform: scale3D(1,1,1);
+                -ms-transform: scale3D(1,1,1);
+                -o-transform: scale3D(1,1,1);
+                transform: scale3D(1,1,1);
+            }
+        }
+        @keyframes yfLoadingBlock {
+            0%, 70%, 100% {
+                -webkit-transform: scale3D(1,1,1);
+                -moz-transform: scale3D(1,1,1);
+                -ms-transform: scale3D(1,1,1);
+                -o-transform: scale3D(1,1,1);
+                transform: scale3D(1,1,1);
+            }
+            35% {
+                -webkit-transform: scale3D(0,0,1);
+                -moz-transform: scale3D(0,0,1);
+                -ms-transform: scale3D(0,0,1);
+                -o-transform:scale3D(0,0,1) ;
+                transform:scale3D(0,0,1);
+            }
+        }
+        @keyframes yfLoadingShadow {
+            0%{
+                -webkit-box-shadow:0 0 5px #fff;
+                -moz-box-shadow:0 0 5px #fff;
+                box-shadow:0 0 5px #fff;
+            }
+            100%{
+                -webkit-box-shadow:0 0 30px #fff;
+                -moz-box-shadow:0 0 30px #fff;
+                box-shadow:0 0 30px #fff;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="yfLoadMask">
+    <div class="yfLoadBox">
+        <div class="yfLoadingContainer">
+            <div class=" block1"></div>
+            <div class=" block2"></div>
+            <div class=" block3"></div>
+            <div class=" block4"></div>
+            <div class=" block5"></div>
+            <div class=" block6"></div>
+            <div class=" block7"></div>
+            <div class=" block8"></div>
+            <div class=" block9"></div>
+        </div>
+        <p>您的订单正在提交，请勿刷新页面</p>
+    </div>
+</div>
+</body>
+</html>

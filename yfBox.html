@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>yfBox</title>
+    <link rel="stylesheet" href="css/yfCss.css">
+</head>
+<body>
+    <div class="d1">
+        <button id="btn1">我是Prompt弹出框</button>
+        <button id="b2">我是Tip框</button>
+        <button id="b3">我是加载框</button>
+        <button id="b4" style="z-index: 3000;position: fixed;">关闭加载框</button>
+    </div>
+<script src="js/jquery-1.8.2.min.js"></script>
+    <script src="js/yfJs.js"></script>
+    <script>
+        $(function () {
+            $('#btn1').click(function () {
+                yfBox.prompt({
+                    txt:"这里是默认提示内容",
+                    mark:"这里是mark",
+                });
+            });
+
+            $('#b2').click(function () {
+                yfBox.tip('error','这里是提示内容！',100000);
+            });
+
+            $('#b3').click(function () {
+                yfBox.load();
+            });
+
+            $('#b4').click(function () {
+                yfBox.closeLoad();
+            })
+        });
+    </script>
+</body>
+</html>

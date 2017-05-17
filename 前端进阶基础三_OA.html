@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+    </style>
+</head>
+<body>
+
+<script src="js/jquery-1.8.2.min.js"></script>
+<script>
+    function test() {
+        console.log(foo);   //function foo
+        console.log(bar);   //undefined
+
+        var foo = 'hello';
+        console.log(foo);    //'hello'
+        var bar = function () {
+            return 'world';
+        }
+
+        function foo() {
+            return 'hello'
+        }
+    }
+
+    test();
+</script>
+</body>
+</html>

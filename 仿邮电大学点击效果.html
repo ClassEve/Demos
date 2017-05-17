@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="js/jquery-1.8.2.min.js"></script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            position: relative;
+        }
+        div{
+            position: absolute;
+            transition:1s;
+        }
+        .dl{
+            left:0;
+            width:50px;
+            height: 50px;
+            background: red;
+        }
+        .dr{
+            background: blue;
+            width:500px;
+            height:500px;
+            left:50px;
+        }
+        .dm{
+            background: #000;
+            width:50px;
+            height:50px;
+            top:50px;
+            left:0;
+        }
+        .dl.active,.dr.active,.dm.active{
+            width:500px;
+            height:500px;
+        }
+        .dl.static,.dr.static,.dm.static{
+            left:0;
+            width:50px;
+            height:50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="dl">这是左</div>
+    <div class="dr active">这是右</div>
+    <div class="dm" style="color: #fff;">这是啥</div>
+    <script>
+        var state = 1;
+        $('div').on('click',function () {
+            if(state == 1){
+                var left = $(this).css('left');
+                var top = $(this).css('top');
+                $('.active').removeClass('active').addClass('static').css('left',left).css('top',top);
+                $(this).removeClass('static').addClass('active').css('left','50px').css('top','0');
+                state = 2;
+                setTimeout(function () {
+                    state = 1;
+                },1000);
+            }
+
+
+        })
+    </script>
+</body>
+</html>

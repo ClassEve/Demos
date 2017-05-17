@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+    </style>
+</head>
+<body>
+
+<script src="js/jquery-1.8.2.min.js"></script>
+<script>
+//    function fn() {
+//        return 20
+//    }
+//    fn.toString = function () {
+//        return 10
+//    };
+//
+//    fn.valueOf = function () {
+//        return 5
+//    };
+//
+//    console.log(fn + 10);
+//
+//
+//    var newArr = [1,2,3,4].map(function (item, i, arr) {
+//        console.log(item,i,arr,this);
+//        return item + 1;
+//    },{a: 1});
+//
+//    console.log(newArr);
+//
+//
+//    /*
+//    *封装map方法
+//    * */
+//    Array.prototype._map = function (fn,context) {
+//        var temp = [];
+//        if(typeof fn == 'function'){
+//            var k = 0;
+//            var len = this.length;
+//            //封装for循环过程
+//            for(; k< len; k++){
+//                //将每一项的运算符丢尽fn里，利用call方法指定fn的this指向与具体参数
+//                temp.push(fn.call(context,this[k],k, this ));
+//            }
+//        }
+//        else{
+//            console.error('不是个方法');
+//        }
+//
+//        //返回每一项运算结果组成的新数组
+//        return temp;
+//    }
+//
+//    var newArr1 = [1,2,3,4]._map(function (item) {
+//        return item + 1;
+//    });
+//
+//    console.log(newArr1);
+
+
+
+
+function add() {
+    //第一次执行时，定义一个数组专门来储存所有的参数
+    var _args = [].slice.call(arguments);
+
+    //在内部声明一个函数，利用闭包的特性保存_args并收集所有 参数值
+    var adder = function () {
+        var _adder = function () {
+            [].push.apply(_args,[].slice.call(arguments));
+            return _adder;
+        };
+
+        //利用隐式转换的特性，当最后执行时隐式转换 ，并计算最终的值返回
+        _adder.toString = function () {
+            return _args.reduce(function (a, b) {
+                return a + b;
+            });
+        };
+        return _adder;
+    };
+    return adder.apply(null,[].slice.call(arguments));
+}
+
+//输出结果，可自由组合参数
+    console.log(add(1,2,3,4,5));
+console.log(add(1,2,3,4)(5));
+console.log(add(1)(2)(3)(4)(5));
+
+
+function slices(a,b,c,d) {
+    var arr = [].slice.call(arguments);
+    console.log(arr);
+}
+
+Array.prototype.merge = function (fn, chars) {
+    return this.map(fn).join(chars);
+};
+
+var arr = [1,2,3,4];
+
+var add = function (num) {
+    return function (item) {
+        return item + num;
+    }
+}
+
+var red = function (num) {
+    return function (item) {
+        return item -num;
+    }
+}
+
+//每一项加2后合并
+    var res1 = arr.merge(add(2),'--');
+//每一项减2后合并
+    var res2 = arr.merge(red(2),'--');
+
+    //也可以直接使用回调函数
+    var res3 = arr.merge((function (num) {
+        return function (item) {
+            return item * num;
+        }
+    })(2),'-');
+
+    /*
+    * 柯里化通用式
+    * */
+
+    var currying = function (fn) {
+        var args = [].slice.call(arguments,1);
+
+        return function () {
+            //收集所有参数到一个数组中，便于统一计算
+            var _args = args.concat([].slice.call(arguments));
+            return fn.apply(null,_args);
+        }
+    }
+
+    var sum = currying(function () {
+        var args = [].slice.call(arguments);
+        return args.reduce(function (a, b) {
+            return a + b;
+        })
+    },10);
+
+Object.prototype.bind = function (context) {
+    var _this = this;
+    var args = [].slice.call(arguments,1);
+
+    return function () {
+        return _this.apply(context,args);
+    }
+}
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

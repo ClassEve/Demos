@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+    </style>
+</head>
+<body>
+
+<script src="js/jquery-1.8.2.min.js"></script>
+<script>
+//    var a = 20;
+//    function test() {
+//        var b = a + 10;
+//
+//        function innerTest() {
+//            var c = 10;
+//            return b + c;
+//        }
+//
+//        return innerTest();
+//    }
+//
+//    test();
+//
+//    innerTextEC = {     //EC == 当前执行上下文
+//        VO: {},//变量对象
+//        scopeChanin: [VO(innerTest), VO(test), VO(global)], //作用域链
+//        this: {}
+//
+//    }
+
+
+    (function () {
+        var a = 10;
+        var b = 20;
+
+        function add(n1,n2) {
+            var n1 = !!n1 ? n1 : a;
+            var n2 = !!n2 ? n2 : b;
+
+            return n1 + n2;
+        }
+
+        window.add = add;
+    })();
+
+    console.log(add(10,20))
+
+
+    for(var i =1;i<=5; i++){
+        (function (j) {
+            setTimeout(function () {
+                console.log(j);
+            },j*1000);
+        })(i)
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/jquery-ui-1.9.2.custom.css">
+    <style>
+        .dd{
+            margin-left: 100px;
+        }
+        .ddd{
+            width: 500px;
+            height:500px;
+            background: url("images/cemali_03.gif");
+            background-size: 100% 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="dd">
+        <label for="minbeds">这是变化的数值</label>
+        <input type="text" name="minbeds" id="minbeds" value="1" class="input">
+    </div>
+    <div class="dd">
+        <label for="minbeds">这是变化的数值</label>
+        <input type="text" name="minbeds" id="minbeds" value="1" class="input">
+    </div>
+    <div class="dd">
+        <label for="minbeds">这是变化的数值</label>
+        <input type="text" name="minbeds" id="minbeds" value="1" class="input">
+    </div>
+    <div class="ddd">
+        
+    </div>
+
+<script src="js/jquery-1.8.2.min.js"></script>
+    <script src="js/jquery-ui-1.9.2.custom.js"></script>
+<script>
+    $( function() {
+        var slider = $('.dd').slider({
+            min: 0,
+            max: 100,
+            range: "min",
+            value: input[ 0 ].value,
+            slide: function( event, ui ) {
+                input[ 0 ].value = ui.value;
+            }
+        });
+        $( ".input" ).on( "input", function() {
+            slider.slider( "value", this.value);
+        });
+    } );
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+    </style>
+</head>
+<body>
+<span id="span">点我看图</span>
+<script src="js/jquery-1.8.2.min.js"></script>
+<script>
+    function getScrollBar() {
+        var el = document.createElement('p'),
+            styles = {
+                width:"100px",
+                height:"100px"
+            },i,scrollBarWidth,clientWidth1,clientWidth2;
+
+        for(i in styles){
+            el.style[i] = styles[i];
+        }
+        document.body.appendChild(el);
+        clientWidth1 = el.clientWidth;
+        el.style.overflowY = "scroll";
+        clientWidth2 = el.clientWidth;
+
+        scrollBarWidth = clientWidth1 - clientWidth2;
+
+        return scrollBarWidth;
+
+
+
+
+        scrollBarWidth = el.offsetWidth - el.clientWidth;
+        el.remove();
+        return scrollBarWidth;
+    }
+    console.log(getScrollBar());
+
+
+    $('#span').click(function () {
+        var iTop = (window.screen.availHeight-800)/2;//获得窗口的垂直位置;
+        var iLeft = (window.screen.availWidth-720)/2;//获得窗口的水平位置;
+        window.open("http://192.168.8.254/webHtml/preAir.jpg", "", "width=720,height=800,"+"top="+iTop+",left="+iLeft);
+    })
+
+</script>
+</body>
+</html>

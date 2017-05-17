@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+
+    <style>
+        div{
+            height:300px;
+            width: 300px;
+            background: #fe0100;
+        }
+    </style>
+</head>
+<body>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <div id='d'></div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <script>
+        var moveY = '';
+        var div = document .getElementById('d');
+        div.addEventListener('touchstart',function () {
+            moveY = 0;
+        });
+        div.addEventListener('touchmove',function (e) {
+            moveY = e.touches[0].screenY;
+        });
+        div.addEventListener('touchend',function () {
+            if(moveY > 0){
+                console.log('这是一次移动事件');
+            }else{
+                console.log('这是一次点击事件');
+            }
+        })
+
+
+    </script>
+</body>
+</html>

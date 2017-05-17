@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .hoverAlert{
+            position:absolute;
+            padding:20px;
+            width:260px;
+            background:#fff;
+            border:1px solid #ccc;
+            box-shadow:0 2px 6px #333;
+            word-wrap:break-word ;
+        }
+        .d:after{
+            content: 'x';
+            display: block;
+            background: #000;
+        }
+    </style>
+</head>
+<body>
+<div class="d">sdjfios <i>iiiiii</i></div>
+    <div style="height: 2100px;"></div>
+    <div style="height: 30px;width: 100%;background: #000;" class="t" title="黑色的夹克发哈速度快发货看啦就是的风景卡上风口浪尖哈圣诞快乐减肥好四大皆空了发货速度加快了号放假卡上打开了粉红色的"></div>
+<script src="js/jquery-1.8.2.min.js"></script>
+
+<script>
+
+
+
+
+
+
+
+
+
+
+
+    hoverAlert('.t');
+    function hoverAlert(elem){
+        var derx=10;
+        var dery=10;
+        //获得窗口的宽高
+        var screenWidth = $(window).width();
+        var screenHeight = $(window).height();
+
+        var alertWidth,      //弹框宽高
+            alertHeight,
+            clienX,         //鼠标位置相对窗口坐标
+            clienY;
+
+        $(elem).mouseover(function(e){
+            this.txt = $(this).attr('title');
+            this.title = '';
+            $(this).css('cursor','pointer');
+            var workAvDeret=$("<div class='hoverAlert'>"+this.txt+"</div>");
+            $("body").append(workAvDeret);
+
+            //获得弹窗宽高
+            alertWidth = $('.hoverAlert').outerWidth();
+            alertHeight = $('.hoverAlert').outerHeight();
+
+            //获得鼠标相对视窗坐标
+            clienX = e.clientX;
+            clienY = e.clientY;
+
+            if(alertHeight + clienY > screenHeight){    //如果高了
+                $(".hoverAlert").css({
+                    "top":(e.pageY - dery - alertHeight)+"px",
+                    "left":(e.pageX+derx)+"px"
+                }).show();
+            }
+            if(alertWidth + clienX > screenWidth){ //如果宽了
+                $(".hoverAlert").css({
+                    "left":(e.pageX - derx - alertWidth)+"px",
+                    "left":(e.pageX+derx)+"px"
+                }).show();
+            }
+            if(alertHeight + clienY > screenHeight && alertWidth + clienX > screenWidth){ //如果又宽又高
+                $(".hoverAlert").css({
+                    "top":(e.pageY - dery - alertHeight)+"px",
+                    "left":(e.pageX - derx - alertWidth)+"px"
+                }).show();
+            }
+            if(alertHeight + clienY < screenHeight && alertWidth + clienX < screenWidth){ //如果正常
+                $(".hoverAlert").css({
+                    "left":(e.pageX+derx)+"px",
+                    "top":(e.pageY+dery)+"px"
+                }).show();
+            }
+        }).mouseout(function(){
+            this.title = this.txt;
+            $(".hoverAlert").remove();
+        }).mousemove(function(e) {
+            //获得鼠标相对视窗坐标
+            clienX = e.clientX;
+            clienY = e.clientY;
+
+            if(alertHeight + clienY > screenHeight){    //如果高了
+                $(".hoverAlert").css({
+                    "top":(e.pageY - dery - alertHeight)+"px",
+                    "left":(e.pageX+derx)+"px"
+                });
+            }
+            if(alertWidth + clienX > screenWidth){ //如果宽了
+                $(".hoverAlert").css({
+                    "left":(e.pageX - derx - alertWidth)+"px",
+                    "left":(e.pageX+derx)+"px"
+                });
+            }
+            if(alertHeight + clienY > screenHeight && alertWidth + clienX > screenWidth){ //如果又宽又高
+                $(".hoverAlert").css({
+                    "top":(e.pageY - dery - alertHeight)+"px",
+                    "left":(e.pageX - derx - alertWidth)+"px"
+                });
+            }
+            if(alertHeight + clienY < screenHeight && alertWidth + clienX < screenWidth){ //如果正常
+                $(".hoverAlert").css({
+                    "left":(e.pageX+derx)+"px",
+                    "top":(e.pageY+dery)+"px"
+                });
+            }
+        });
+    }
+</script>
+</body>
+</html>

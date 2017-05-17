@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+    </style>
+</head>
+<body>
+
+<script src="js/jquery-1.8.2.min.js"></script>
+<script>
+
+    /*
+    * 函数式编程，只有表达式，没有语句
+    * */
+    var a = 10;
+    var fn = function (bar, num) {
+        console.log(bar() + num);
+    };
+    fn(function () {
+        return a;
+    },20);
+
+    //闭包模块
+    (function () {
+        //私有变量
+        var age = 20;
+        var name = 'tom';
+
+
+        //私有方法
+        function getName() {
+            return 'your name is '+ name;
+        }
+
+        function getAge() {
+            console.log(age)
+        }
+
+        window.getAge = getAge;
+
+    })();
+
+    getAge();
+
+    (function () {
+        // states 结构预览
+        // states = { a:1 ,b: 2, m: 30, o: {} }
+
+        var states = {}; //私有变量，用来储存状态与数据
+
+        //判断数据类型
+        function type(elem) {
+            if(elem == null)
+                return elem + '';
+            return toString.call(elem).replace(/[\[\]]/g, '').split('')[1].toLowerCase();
+        }
+
+        /*
+        *  @Param name 属性名
+        *  @Description 通过属性名获取保存在states中的值
+        * */
+
+        function get(name) {
+            return states[name] ? states[name] : '';
+        }
+
+        function getStates() {
+            return states;
+        }
+
+        /*
+        *  options {object} 键值对
+        *  target {object} 属性值为对象的属性，只在函数实现递归时传入
+        *  通过传入键值对的方式修改state树，使用方式与小程序的data或者react中的setStates类似
+        * */
+
+        function set(options, target) {
+            var keys = Object.keys(options);    //键值集合
+            var o = target || states;
+
+            keys.map(function (item) {  //item是keys里的值
+                if(typeof o[item] == 'undefined'){
+                    o[item] = options[item];
+                }
+                else{
+                    typeof (o[item]) == 'object' ? set(options[item],o[item]) : o[item] = options[item];
+                }
+            })
+        }
+
+        //对外提供接口
+
+        window.get = get;
+        window.set = set;
+        window.getStates = getStates;
+    })();
+
+
+    //使用方法
+    set({ a: 20});  //保存属性a
+    set({ b: 100}); // 保存属性b
+    set({ c: 10}); //保存属性c
+
+    //保存属性o，它的值为一个对象
+    set({
+        o :{
+            m: 10,
+            n: 20
+        }
+    });
+
+    //修改对象o的m值
+    set({
+        o:{
+            m:1000
+        }
+    });
+
+    //给对象o中增加一个c属性
+    set({
+        o:{
+            c:100
+        }
+    });
+
+    console.log(getStates());
+
+    //函数自执行方法
+    !function () {
+       console.log(111);
+    }();
+
+    +function () {
+       console.log(222);
+    }()
+
+
+
+    /*
+    *   普通封装
+    * */
+    function add(n1, n2) {
+        return n1 + n2;
+    }
+    add(20,10);//30
+
+    /*
+    * 挂载到对象上
+    * */
+    if(typeof Array.prototype.add !== 'function'){
+        Array.prototype.add = function () {
+            var i = 0,
+                len = this.length,
+                result = 0;
+
+            for (; i<len ; i++){
+                result += this[i]
+            }
+            return result;
+        }
+    }
+
+    console.log([1,2,3,4].add());
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

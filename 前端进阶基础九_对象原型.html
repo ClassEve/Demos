@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+    </style>
+</head>
+<body>
+
+<script src="js/jquery-1.8.2.min.js"></script>
+<script>
+    function createPerson(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+    createPerson.prototype = {
+        constructor: createPerson,  //指定constructor的指向，本函数
+        getName: function () {
+            console.log(this.name);
+        },
+    };
+
+isMoblie = 'ontouchstart' in document;  //判断是否在移动端
+    console.log(isMoblie);
+
+    
+    function cPerson(name,age,job) {
+        createPerson.call(this,name,age);
+        this.job = job;
+    }
+    cPerson.prototype = new createPerson('davi','20');
+    var davi = new cPerson('gg','20','webn');
+    davi.getName();
+</script>
+</body>
+</html>

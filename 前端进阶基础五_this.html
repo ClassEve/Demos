@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+    </style>
+</head>
+<body>
+
+<script src="js/jquery-1.8.2.min.js"></script>
+<script>
+//    //定义父级的构造函数
+//    var Person = function (name, age) {
+//        this.name = name;
+//        this.age = age;
+//        this.gender = ['man','woman'];
+//    };
+//
+//    //定义子类的构造函数
+//    var Student = function (name,age,high) {
+//        //use call
+//        Person.call(this,name,age);
+//        this.high = high;
+//    };
+//
+//    Student.prototype.message = function () {
+//        console.log('name:'+this.name+',age:'+this.age+',high:'+this.high+',gender:'+this.gender[0]+'')
+//    };
+//
+//    var student = new Student('xiaom',12,'150cm');
+//    console.log(student);
+//
+//    var obj  ={
+//        a: 20,
+//        getA: function () {
+//            setTimeout(function () {
+//                console.log(this.a)
+//            }.bind(this),1000);
+//        }
+//    };
+//    obj.getA();
+
+    function Person(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    Person.prototype.getName = function () {
+        return this.name;
+
+    };
+
+    var p1 = new Person('Nick',20);
+    console.log(p1.getName())
+</script>
+<script src="js/webGo6.js"></script>
+</body>
+</html>

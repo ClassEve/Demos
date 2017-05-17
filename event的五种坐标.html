@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #testid{
+            background: red;
+            width:200px;
+            height:200px;
+            margin:100px auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="testid"></div>
+<script src="js/jquery-1.8.2.min.js"></script>
+<script>
+    var testid = document.getElementById('testid');
+    testid.onclick = function (e) {
+        console.log(e.clientX+":client:"+e.clientY);
+        console.log(e.screenX+":srceen:"+e.screenY);
+        console.log(e.offsetX+":offset:"+e.offsetY);
+        console.log(e.pageX+":page:"+e.pageY);
+        console.log(e.x+":"+e.y);
+    }
+</script>
+</body>
+</html>

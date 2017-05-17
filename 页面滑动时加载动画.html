@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            height:5000px;
+        }
+        #showDiv{
+            width:500px;
+            height:350px;
+            background: red;
+            margin:1000px auto 0 auto;
+        }
+        @-webkit-keyframes fadeInLeft {
+            0%{
+                opacity:0;
+                transform: translate3d(-100%,0,0);
+            }
+            100%{
+                opacity: 1;
+                transform: none;
+            }
+        }
+
+        .fadeInLeft{
+            -webkit-animation:fadeInLeft 2s;
+            -o-animation:fadeInLeft 2s;
+            animation:fadeInLeft 2s;
+        }
+    </style>
+</head>
+<body>
+    <div id="showDiv"></div>
+<script src="js/jquery-1.8.2.min.js"></script>
+<script>
+    function showDivs(){
+        var showId = document.getElementById('showDiv');
+        var clients = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+        var divTop = showId.getBoundingClientRect().top;
+        if(divTop <= clients && divTop >= 0){
+            showId.classList.add('fadeInLeft');
+        }else{
+            showId.classList.remove('fadeInLeft');
+        }
+    }
+
+    window.onscroll = showDivs;
+
+</script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+    </style>
+</head>
+<body>
+<div id="d1">
+    <p>Original message: "{{ message }}"</p>
+    <p>Computed reversed message: "{{ reversedMessage }}"</p>
+</div>
+
+<div id="watch-example"></div>
+<div id="d2">{{ fullName }}</div>
+<script src="js/vue.js"></script>
+<script src="https://unpkg.com/axios@0.12.0/dist/axios.min.js"></script>
+<script src="https://unpkg.com/lodash@4.13.1/lodash.min.js"></script>
+<script>
+    new Vue({
+        el: '#d1',
+        data: {
+            message: 'Hello'
+        },
+        computed: {
+            reversedMessage: function () {
+                return this.message.split('').reverse().join('');
+            }
+        }
+    })
+
+    new Vue({
+        el: '#d2',
+        data: {
+            firstName: 'Foo',
+            lastName: 'Bar',
+            FullName: 'Foo Bar'
+        },
+        computed:{
+            fullName: function () {
+                return this.firstName + ' '+ this.lastName;
+            }
+        }
+    })
+
+    var wachExampleVM = new Vue({
+        el: '#watch-example',
+
+
+
+    })
+</script>
+</body>
+</html>
