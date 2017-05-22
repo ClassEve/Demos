@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .shengbei{
+            background: #ccc;
+            padding-left:200px;
+            padding-right: 100px;
+            height:300px;
+        }
+        .shengbei .middle{
+            width:100%;
+            background: yellow;
+            height:300px;
+            float: left;
+        }
+        .shengbei .left{
+            background: red;
+            width:200px;
+            height:300px;
+            float: left;
+            margin-left:-100%;
+            position: relative;
+            left:-200px;
+        }
+        .shengbei .right{
+            background: blue;
+            width:100px;
+            height:300px;
+            margin-left:-100px;
+            float: left;
+            position: relative;
+            right:-100px;
+        }
+
+        .sb1{
+            background: #e0e0e0;
+            height:300px;
+            position: relative;
+            padding-left:300px;
+            padding-right: 200px;
+            min-width: 980px;
+        }
+        .sb1 .middle{
+            width:100%;
+            height:100%;
+            background: deeppink;
+        }
+        .sb1 .left{
+            height:100%;
+            width:300px;
+            background:deepskyblue;
+            left:0;
+            top:0;
+            position:absolute;
+        }
+        .sb1 .right{
+            height:100%;
+            width:200px;
+            background: rebeccapurple;
+            position:absolute;
+            right:0;
+            top:0;
+        }
+    </style>
+</head>
+<body>
+<!--圣杯布局-->
+<div class="shengbei">
+    <!--中间的div必须写在最前面-->
+    <div class="middle">中间弹性区</div>
+    <div class="left">左边栏</div>
+    <div class="right">右边栏</div>
+</div>
+
+<!--圣杯改良-->
+<div class="sb1">
+    <div class="middle">中间弹性区</div>
+    <div class="left">左边栏</div>
+    <div class="right">右边栏</div>
+</div>
+
+
+<script>
+
+</script>
+</body>
+</html>

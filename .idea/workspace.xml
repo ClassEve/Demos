@@ -26,45 +26,30 @@
       <file leaf-file-name="雷达echarts.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/雷达echarts.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="675">
-              <caret line="33" column="14" lean-forward="true" selection-start-line="33" selection-start-column="14" selection-end-line="33" selection-end-column="14" />
+            <state relative-caret-position="825">
+              <caret line="33" column="14" lean-forward="false" selection-start-line="33" selection-start-column="14" selection-end-line="33" selection-end-column="14" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <marker date="1495179632296" expanded="true" signature="272:2828" ph="..." />
-                <marker date="1495179632296" expanded="true" signature="356:2787" ph="{...}" />
-                <marker date="1495179632296" expanded="true" signature="394:1584" ph="{...}" />
-                <marker date="1495179632296" expanded="true" signature="511:721" ph="[...]" />
-                <marker date="1495179632296" expanded="true" signature="741:889" ph="{...}" />
-                <marker date="1495179632296" expanded="true" signature="787:875" ph="{&quot;color&quot;: '##72ACD1'...}" />
-                <marker date="1495179632296" expanded="true" signature="914:1293" ph="{...}" />
-                <marker date="1495179632296" expanded="true" signature="955:1279" ph="{&quot;shadowColor&quot;: 'rgba(0, 0, 0, 0.3)'...}" />
-                <marker date="1495179632296" expanded="true" signature="984:1170" ph="[...]" />
-                <marker date="1495179632296" expanded="true" signature="1317:1433" ph="{...}" />
-                <marker date="1495179632296" expanded="true" signature="1346:1419" ph="{&quot;color&quot;: 'rgba(255, 255, 255, 0.5)'...}" />
-                <marker date="1495179632296" expanded="true" signature="1458:1574" ph="{...}" />
-                <marker date="1495179632296" expanded="true" signature="1487:1560" ph="{&quot;color&quot;: 'rgba(255, 255, 255, 0.5)'...}" />
-                <marker date="1495179632296" expanded="true" signature="1602:2781" ph="[...]" />
-                <marker date="1495179632296" expanded="true" signature="1603:2780" ph="{&quot;name&quot;: '工程师'...}" />
-                <marker date="1495179632296" expanded="true" signature="1676:2645" ph="[...]" />
-                <marker date="1495179632296" expanded="true" signature="1694:2631" ph="{&quot;name&quot;: '工程师能力'...}" />
-                <marker date="1495179632296" expanded="true" signature="1802:2266" ph="{...}" />
-                <marker date="1495179632296" expanded="true" signature="1804:2244" ph="//..." />
-                <marker date="1495179632296" expanded="true" signature="2298:2451" ph="{...}" />
-                <marker date="1495179632296" expanded="true" signature="2342:2429" ph="{&quot;color&quot;: 'rgba(255, 149, 0, 0.3)'...}" />
-                <marker date="1495179632296" expanded="true" signature="2483:2613" ph="{...}" />
-                <marker date="1495179632296" expanded="true" signature="2523:2591" ph="{&quot;color&quot;: '##fff'...}" />
-                <marker date="1495179632296" expanded="true" signature="2669:2770" ph="{...}" />
-                <marker date="1495179632296" expanded="true" signature="2701:2756" ph="{&quot;color&quot;: '##ff9500'...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="3d旋转.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="3d旋转.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/3d旋转.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="7" column="23" lean-forward="true" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
+            <state relative-caret-position="325">
+              <caret line="13" column="24" lean-forward="true" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="页面布局.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/页面布局.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="235">
+              <caret line="42" column="33" lean-forward="true" selection-start-line="42" selection-start-column="33" selection-end-line="42" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -150,8 +135,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/页面滑动时加载动画.html" />
-        <option value="$PROJECT_DIR$/网页滚动到顶部或底部.html" />
         <option value="$PROJECT_DIR$/网页滚动到顶部或底部加载.html" />
         <option value="$PROJECT_DIR$/dhfuklsdhlfk.html" />
         <option value="$PROJECT_DIR$/div滚动到底部加载.html" />
@@ -201,6 +184,8 @@
         <option value="$PROJECT_DIR$/雷达echarts.html" />
         <option value="$PROJECT_DIR$/bg img &amp; color.html" />
         <option value="$PROJECT_DIR$/class重叠问题.html" />
+        <option value="$PROJECT_DIR$/3d旋转.html" />
+        <option value="$PROJECT_DIR$/页面布局.html" />
       </list>
     </option>
   </component>
@@ -217,10 +202,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1096" />
+    <option name="x" value="701" />
+    <option name="y" value="27" />
+    <option name="width" value="1169" />
+    <option name="height" value="1084" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -262,8 +247,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -273,20 +258,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Demos" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Demos" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Demos" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="images" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -555,11 +526,12 @@
       <workItem from="1494481854938" duration="180000" />
       <workItem from="1494553739046" duration="537000" />
       <workItem from="1495156963038" duration="4345000" />
+      <workItem from="1495419160491" duration="3145000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="453857000" />
+    <option name="totallyTimeSpent" value="457002000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -571,9 +543,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
+    <frame x="701" y="27" width="1169" height="1084" extended-state="0" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14345992" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24092117" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39934713" sideWeight="0.5021097" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -583,21 +555,12 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39934713" sideWeight="0.4978903" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39934713" sideWeight="0.5021097" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14345992" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297062" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24966262" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39934713" sideWeight="0.4978903" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -613,20 +576,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/获取滚动轴宽度.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="552">
-          <caret line="23" column="38" lean-forward="true" selection-start-line="23" selection-start-column="38" selection-end-line="23" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/闭包.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="696">
-          <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/empty方法.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="456">
@@ -881,35 +830,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/雷达echarts.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="33" column="14" lean-forward="true" selection-start-line="33" selection-start-column="14" selection-end-line="33" selection-end-column="14" />
+        <state relative-caret-position="825">
+          <caret line="33" column="14" lean-forward="false" selection-start-line="33" selection-start-column="14" selection-end-line="33" selection-end-column="14" />
           <folding>
             <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1495179632296" expanded="true" signature="272:2828" ph="..." />
-            <marker date="1495179632296" expanded="true" signature="356:2787" ph="{...}" />
-            <marker date="1495179632296" expanded="true" signature="394:1584" ph="{...}" />
-            <marker date="1495179632296" expanded="true" signature="511:721" ph="[...]" />
-            <marker date="1495179632296" expanded="true" signature="741:889" ph="{...}" />
-            <marker date="1495179632296" expanded="true" signature="787:875" ph="{&quot;color&quot;: '##72ACD1'...}" />
-            <marker date="1495179632296" expanded="true" signature="914:1293" ph="{...}" />
-            <marker date="1495179632296" expanded="true" signature="955:1279" ph="{&quot;shadowColor&quot;: 'rgba(0, 0, 0, 0.3)'...}" />
-            <marker date="1495179632296" expanded="true" signature="984:1170" ph="[...]" />
-            <marker date="1495179632296" expanded="true" signature="1317:1433" ph="{...}" />
-            <marker date="1495179632296" expanded="true" signature="1346:1419" ph="{&quot;color&quot;: 'rgba(255, 255, 255, 0.5)'...}" />
-            <marker date="1495179632296" expanded="true" signature="1458:1574" ph="{...}" />
-            <marker date="1495179632296" expanded="true" signature="1487:1560" ph="{&quot;color&quot;: 'rgba(255, 255, 255, 0.5)'...}" />
-            <marker date="1495179632296" expanded="true" signature="1602:2781" ph="[...]" />
-            <marker date="1495179632296" expanded="true" signature="1603:2780" ph="{&quot;name&quot;: '工程师'...}" />
-            <marker date="1495179632296" expanded="true" signature="1676:2645" ph="[...]" />
-            <marker date="1495179632296" expanded="true" signature="1694:2631" ph="{&quot;name&quot;: '工程师能力'...}" />
-            <marker date="1495179632296" expanded="true" signature="1802:2266" ph="{...}" />
-            <marker date="1495179632296" expanded="true" signature="1804:2244" ph="//..." />
-            <marker date="1495179632296" expanded="true" signature="2298:2451" ph="{...}" />
-            <marker date="1495179632296" expanded="true" signature="2342:2429" ph="{&quot;color&quot;: 'rgba(255, 149, 0, 0.3)'...}" />
-            <marker date="1495179632296" expanded="true" signature="2483:2613" ph="{...}" />
-            <marker date="1495179632296" expanded="true" signature="2523:2591" ph="{&quot;color&quot;: '##fff'...}" />
-            <marker date="1495179632296" expanded="true" signature="2669:2770" ph="{...}" />
-            <marker date="1495179632296" expanded="true" signature="2701:2756" ph="{&quot;color&quot;: '##ff9500'...}" />
           </folding>
         </state>
       </provider>
@@ -948,6 +872,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
           <caret line="8" column="25" lean-forward="true" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/3d旋转.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="13" column="24" lean-forward="true" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/页面布局.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="235">
+          <caret line="42" column="33" lean-forward="true" selection-start-line="42" selection-start-column="33" selection-end-line="42" selection-end-column="33" />
+          <folding />
         </state>
       </provider>
     </entry>
