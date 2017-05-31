@@ -13,18 +13,30 @@
         <button id="b4" style="z-index: 3000;position: fixed;">关闭加载框</button>
     </div>
 <script src="js/jquery-1.8.2.min.js"></script>
-    <script src="js/yfJs.js"></script>
+    <script src="js/yfBox.js"></script>
     <script>
         $(function () {
             $('#btn1').click(function () {
                 yfBox.prompt({
-                    txt:"这里是默认提示内容",
+                    txt:"1111111",
                     mark:"这里是mark",
+                    ok: function () {
+                        yfBox.prompt({
+                            txt:"22222222",
+                            mark:"这里是mark",
+                            ok: function () {
+                                yfBox.prompt({
+                                    txt:"33333333333",
+                                    mark:"这里是mark",
+                                });
+                            }
+                        });
+                    }
                 });
             });
 
             $('#b2').click(function () {
-                yfBox.tip('error','这里是提示内容！',100000);
+                yfBox.tip('error','这里是提示内容！',1000);
             });
 
             $('#b3').click(function () {
@@ -35,6 +47,14 @@
                 yfBox.closeLoad();
             })
         });
+
+        function randomNum(min,max) {
+            var range = max - min + 1;
+            return parseInt(Math.random() * range + min);
+        }
+
+
+        console.log(typeof randomNum);
     </script>
 </body>
 </html>
