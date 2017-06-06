@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+    </style>
+</head>
+<body>
+
+<script>
+var person = {
+    name: 'damon'
+}
+
+function foo(obj) { //这里传的是引用地址
+    obj.name = 'xiaomon';
+}
+
+foo(person);
+console.log(person);
+
+
+//给数组扩展加法
+    if(typeof Array.prototype.add !== 'function'){
+        Array.prototype.add = function () {
+            var i = 0,
+                len = this.length,
+                result = 0;
+            this.forEach(function (val, index) {
+                result += val;
+            })
+
+            return result;
+        }
+    }
+
+    var arr = [1,2,3,4,5];
+    console.log(arr.add());
+</script>
+</body>
+</html>

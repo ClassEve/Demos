@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+    </style>
+</head>
+<body>
+
+<script src="js/jquery-1.8.2.min.js"></script>
+<script>
+    Array.prototype._map = function (fn, context) {
+        var tmp = [];
+        if(typeof fn === 'function'){
+            for(var k = 0; k < this.length; k++){
+                tmp.push(fn.call(context,this[k],k,this));
+            }
+        }else{
+            console.error(
+                'TypeError：'+fn+'is not a function'
+            )
+        }
+
+        return tmp;
+    }
+
+//    arr = [1,2,3,4,5];
+//    var a1 = arr._map(function (val, index) {
+//        console.log(index);
+//        return val+10;
+//    });
+//
+//    function add() {
+//        var args = [].slice.call(arguments);
+//        //内部声明一个函数，利用闭包，保存args并收集所有参数值
+//        //第一次执行，定义一个数组，专门储存所有的参数
+//        var adder = function () {
+//            var _adder =function () {
+//                [].push.apply(args,[].slice.call(arguments));
+//                return _adder;
+//            }
+//
+//
+//            //利用隐式转换，当最后执行时，隐式转换，并计算最终的值返回
+//            _adder.toString = function () {
+//                return args.reduce(function (a, b) {
+//                    return a + b;
+//                });
+//            }
+//
+//            return _adder;
+//
+//        };
+//
+//        return adder();
+//    }
+//
+//console.log(add(1)(2,3)(4,5,6))
+
+
+
+
+//function add() {
+//    var args = [].slice.call(arguments);
+//
+//    function adder() {
+//        args.push.apply(args,[].slice.call(arguments));
+//
+//        return adder;
+//    }
+//
+//    adder.toString = function () {
+////        return args.reduce(function (a, b) {
+////            return a + b;
+////        });
+//
+//        var x = 0;
+//        args.forEach(function (val, index) {
+//            x+=val;
+//        });
+//        return x;
+//    };
+//
+//    return adder;
+//
+//}
+//
+//console.log(add(1)(2,3)(4,5,6));
+//    console.log(add(1,3,4)(3)(8));
+//
+//    console.log(1)
+
+
+var arr = [1,2,3,4,5];
+
+    Array.prototype.merger = function (chars,num) {
+        return this.map(function (val, index) {
+            return val + num;
+        }).join(chars);
+    }
+
+    var str = arr.merger('--',1);
+    console.log(str);
+
+
+    Array.prototype.mer = function (fn,chars) {
+        return this.map(fn).join(chars);
+    }
+    var arr = [1,2,3,4,5];
+
+    var add = function (num) {
+        return function (item) {
+            return item + num;
+        }
+    }
+
+    var red = function (num) {
+        return function (item) {
+            return item - num;
+        }
+    }
+    var res1 = arr.mer(add(2),'---');
+
+    var res2 = arr.mer((function (item) {
+        return item + 10;
+    })(2),'+++');
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
