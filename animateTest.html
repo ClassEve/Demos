@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="node_modules/animate.css/animate.css">
+    <style>
+        .wow{
+            height:1000px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wow bounceInLeft">
+        1111111111111111111
+    </div>
+
+    <div class="wow bounceInDown" data-wow-duration="5s" data-wow-iteration="10">
+        22222222222222
+    </div>
+
+    <script src="node_modules/wowjs/dist/wow.js"></script>
+    <script>
+        var wow = new WOW({
+            boxClass: 'wow',
+            animateClass: 'animated'
+        });
+        wow.init();
+    </script>
+</body>
+</html>

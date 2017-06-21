@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <link rel="stylesheet" href="css/mobiscroll3.0.0.min.css">
+</head>
+<body>
+<input id="mobiscroll"/>
+<script src="js/jquery-1.8.2.min.js"></script>
+<script src="js/mobiscroll-3.0.0.min.js"></script>
+<script>
+    //改变字体
+    $(window).resize(infinite);
+    function infinite() {
+        var htmlWidth = $('html').width();
+        if (htmlWidth >= 750) {
+            $("html").css({
+                "font-size" : "40px"
+            });
+        } else {
+            $("html").css({
+                "font-size" :  40 / 750 * htmlWidth + "px"
+            });
+        }
+    }
+    infinite();
+
+    mobiscroll.select('#mobiscroll', {
+        onBeforeShow: function (event, inst) {
+            alert('11');
+            inst.settings.readonly = true;
+        },
+        lang: 'zh'
+    });
+</script>
+</body>
+</html>

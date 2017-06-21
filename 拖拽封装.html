@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .target {
+            width: 50px;
+            height: 50px;
+            background-color: orange;
+            cursor: move;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+
+<div id="target" class="target"></div>
+
+<div class="target" id="t1"></div>
+
+<script src="js/jquery-1.8.2.min.js"></script>
+<script>
+    (function () {
+        function Drag(selector) {
+            this.el = $(selector);
+            this.startX = 0;
+            this.startY = 0;
+            this.sourceX = 0;
+            this.sourceY = 0;
+
+            //初始化
+            this.init();
+        }
+
+        Drag.prototype = {
+             constructor: Drag,
+             init: function () {
+                 //初始化需要做哪些事情
+                 this.setDrag();
+             },
+
+            //获取元素当前的位置
+            getPosition: function () {
+                 return {
+                     x: parseInt(this.el.css('left')),
+                     y: parseInt(this.el.css('top'))
+                 }
+            },
+            //设置元素当前的位置
+            setPosition: function (pos) {
+                 console.log(pos);
+                this.el.css(
+                    {
+                        left: pos.x,
+                        top: pos.y
+                    }
+                );
+            },
+            //绑定事件
+            setDrag: function () {
+                var _this = this;
+                var el = this.el;
+                el.mousedown(start);
+                function start(e) {
+                    _this.startX = e.pageX;
+                    _this.startY = e.pageY;
+
+                    var pos = _this.getPosition();
+
+                    _this.sourceX = pos.x;
+                    _this.sourceY = pos.y;
+
+                    $(document).mousemove(move);
+                    $(document).mouseup(end);
+                }
+
+                function move(e) {
+                    var currentX = e.pageX;
+                    var currentY = e.pageY;
+
+                    var disX = currentX - _this.startX;
+                    var disY = currentY - _this.startY;
+
+                    _this.setPosition({
+                        x: _this.sourceX + disX,
+                        y: _this.sourceY + disY
+                    })
+                }
+
+                function end(e) {
+                    $(document).off('mousemove',move).off('mouseup',end);
+                }
+            }
+
+         }
+
+        window.Drag = Drag;
+
+    })();
+
+var a = new Drag('#target');
+
+    new Drag('#t1');
+console.log(a);
+</script>
+</body>
+</html>

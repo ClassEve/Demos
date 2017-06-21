@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+
+<script>
+    class Sol{
+        constructor(name,age,height){
+            this.name = name;
+            this.age = age;
+            this.height = height;
+        }
+
+        getHeight(){
+            console.log(this.height);
+        }
+    }
+
+    class Ge extends Sol{
+        constructor(name,age,height,type){
+            super(name,age,height);
+            this.type = type;
+        }
+
+        getType(){
+            console.log(this.type);
+        }
+    }
+
+    new Ge('hei',12,194,111).getType();
+
+
+
+
+
+</script>
+</body>
+</html>
