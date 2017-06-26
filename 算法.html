@@ -8,13 +8,13 @@
 
 <script>
     //todo 一、翻转字符串
-    function reverseStr(str) {
-        var arr = [];
-        arr = str.split('');
-        arr.reverse();
-        return arr.join('');
-    }
-    console.log(reverseStr('hello'));
+//    function reverseStr(str) {
+//        var arr = [];
+//        arr = str.split('');
+//        arr.reverse();
+//        return arr.join('');
+//    }
+//    console.log(reverseStr('hello'));
 
     //知识点  split(),将字符串切割为数组
     //reverse()  翻转数组
@@ -31,27 +31,159 @@
 //        return sum
 //    }
     //递归实现
-    function factorialize(num) {
-        if(num == 1 || num == 0){
-            return 1;
-        }
+//    function factorialize(num) {
+//        if(num == 1 || num == 0){
+//            return 1;
+//        }
+//
+//        return factorialize(num - 1) * num;
+//    }
+//
+//    console.log(factorialize(5));
+//
 
-        return factorialize(num - 1) * num;
+    //todo 三、回文算法
+    //如果一个字符串，忽略标点符号，大小写和空格，正反读一样，就是回文
+    function palindrome(str) {
+        var newStr = str.replace(/[^0-9a-z]/gi,'');
+        newStr = newStr.toLocaleLowerCase();
+        //方法一
+//        var arr = newStr.split('');
+//        arr.reverse();
+//        arr = arr.join('');
+//        if(newStr === arr){
+//            console.log('这是回文')
+//        }else{
+//            console.log('这不是回文')
+//        }
+        //方法二
+        for (var i = 0, j = newStr.length - 1; i < j; i++ , j--){
+            if(newStr.charAt(i) !== newStr.charAt(j)){
+                return false
+            }
+        }
+        return true;
     }
 
-    console.log(factorialize(5));
+    //todo 四、寻找最长的单词算法
+    //找到提供句子中最长的单词，并计算长度
+    function findLongestWord(str) {
+        var arr = str.split(' '),
+            maxNum = 0;
+        for (var i = 0; i < arr.length - 1; i++){
+            if(arr[i].length > maxNum){
+                maxNum = arr[i].length
+            }
+        }
+        return maxNum;
+    }
+
+    //todo 五、设置首字母大小写转换
+    function titleCase(str) {
+        var arr = str.toLowerCase().split(' ').map(function (word) {
+            return (word.charAt(0).toUpperCase() + word.slice(1));
+        }).join(' ');
+
+        console.log(arr);
+    }
+
+    //todo 六、从二维数组中取得所有最大值，并形成一个新数组
+    function largesOfFour(arr) {
+        var i = 0;
+        var maxArr = [];
+        for(; i < arr.length; i++){
+            for(var j = 0; j < arr[i].length; j++){
+                if(j === 0){
+                    maxArr[i] = arr[i][j]
+                }else{
+                    maxArr[i] = Math.max(maxArr[i],arr[i][j]);
+                }
+            }
+        }
+
+        return maxArr;
+    }
+
+//    var arr = [
+//        [13, 27, 18, 26],
+//        [4, 5, 1, 3],
+//        [32, 35, 37, 39],
+//        [1000, 1001, 857, 1]
+//    ]
+//    console.log(largesOfFour(arr));
 
 
 
+    //todo 七、 确认末尾字符串是否以指定字符串结尾
+    function confirmEnding(str, target) {
+        var index = str.lastIndexOf(target);
+        console.log(index);
+        return index == str.length - target.length;
+    }
+//    console.log(confirmEnding("Walking on water and developing software from a are easy if both are frozen specification", "specification"));
+
+    //todo 八、重复一个指定的字符串n次，如果n为负数，返回空
+    function repeat(str, n) {
+        var temp = str;
+        var i = 0;
+        if(n < 0){
+            return '';
+        }else{
+            for(; i < n - 1; i++){
+                str = str.concat(temp);
+            }
+            console.log(str);
+        }
+    }
+
+//    repeat('abcd',10);
 
 
+    //todo 九、字符串截取算法
+    //如果字符串的长度比指定的参数num唱，则把多余的部分用..表示，切记，插入到字符串尾部的三个点好也会计入长度，但是，如果指定的参数小于
+    //或等于3，则添加的三个点好不会计入长度
+    function truncate(str, num) {
+        var more = '...';
+        if(str.length <= num){
+            if(num <= 3){
+                var newStr = str.substr(0,num);
+                //substr是从start开始，截取指定长度的字符串
+                //substring  在两个下标之间截取
+                str = newStr.concat(more);
+            }else{
+                return str;
+            }
+        }else{
+            if(num <= 3){
+                var newStr = str.substr(0,num);
+                str = newStr.concat(more);
+            }else{
+                var newStr = str.substr(0,num-3);
+                str = newStr.concat(more);
+            }
+        }
+        return str;
+    }
 
 
+//    console.log(truncate("Absolutely Longer", 110));
 
+    //todo 十、数组分割  例如 chunk([1,2,3,4,5],2)=[[1,2],[3,4],[5]];
+    function chunk(arr, size) {
+        var newArr = [];
+        var index = 0,
+            end = size,
+            i = 0;
+        var count = arr.length / size;
+        for(; i < count; index += size){
+            newArr[i] = arr.slice(index,end);
+            end = end + end;
+            i++;
+        }
+        return newArr;
+    }
 
-
-
-
+//    console.log(chunk([0, 1, 2, 3, 4, 5, 6], 3));
 
 
 
