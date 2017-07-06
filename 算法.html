@@ -196,10 +196,106 @@
     }
 //    slasher([1,2,3,5],2);
 
-    //todo 十二、日过第一个字符串元素包含了第二个字符串的所有字符，返回true
+    //todo 十二、如果第一个字符串元素包含了第二个字符串的所有字符，返回true
+    function mutation(arr) {
+        var count = 0,
+            newArr, i = 0;
+        newArr = arr.join(' ');
+        console.log(newArr);
+        newArr = newArr.toLowerCase().split(' ');
+        newArr[0] = newArr[0].split('');
+        newArr[1] = newArr[1].split('');
+        console.log(newArr);
+        for (; i < newArr[1].length; i++){
+            var index = 0;
+            for (; index < newArr[0].length;index++){
+                if(newArr[1][i] == newArr[0][index]){
+                    count++;
+                    index = newArr[0].length;
+                }
+            }
+            console.log(count);
+        }
+        return count === arr[1].length;
+    }
 
+//    console.log(mutation(['Floor','fOOOOR']));
 
+    function myMutation(arr) {
+        var count = 0,
+            newArr,i = 0;
+        newArr = arr.join(',');
+        newArr = newArr.toLowerCase().split(',');
+        newArr[0] = newArr[0].split('');
+        newArr[1] = newArr[1].split('');
+        for (; i < newArr[1].length; i++){
+            var index = 0;
+            for (; index < newArr[0].length; index++){
+                if(newArr[1][i] == newArr[0][index]){
+                    count++;
+                    index = newArr[0].length;
+                }
+            }
+        }
+        return count == newArr[1].length;
+    }
 
+    //todo 十三、删除数组中所有的假值（false,null,0,'',undefined,NaN）
+    //slice不会改变原数组，splice会改变原数组
+    function bouncer(arr) {
+        var index = 0;
+        for(; index < arr.length; index++){
+            if(!arr[index]){
+                arr.splice(index,1,'被删除');  //或者
+                //保证删除数组后，索引不会跳过下一个
+//                index --;
+            }
+        }
+        return arr;
+    }
+//    console.log(bouncer([7, "ate", "", false, 9]));
+
+    //todo 十四、实现一个摧毁函数，第一个参数是要摧毁的数组，其他的是待摧毁的值
+    function destroyer(arr) {
+        var newDel = Array.prototype.slice.apply(arguments);//改进，动态获取argus，不限制个数
+        newDel.splice(0,1);
+        var index = 0;
+        for( ; index < newDel.length; index++){
+            var i = 0;
+            for(; i < arr.length; i++){
+                if(arr[i] == newDel[index]){
+                    arr.splice(i,1);
+                    index--;
+                }
+            }
+        }
+        return arr;
+    }
+//    console.log(destroyer([1,2,3,4],4,5,6,7.9))
+
+    //todo 十五、数组排序插入值，然后返回插入值的索引
+    function where(arr, num) {
+        arr.push(num);
+        var i = 0,
+            index = 0;
+        for(; i < arr.length; i++){
+            var j = i + 1;
+            for(; j < arr.length; j++){
+                if(arr[i] > arr[j]){
+                    var temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
+                }
+            }
+        }
+
+        for(; index < arr.length; index++){
+            if(arr[index] == num){
+                return index;
+            }
+        }
+    }
+//    console.log(where([2, 20, 10], 19));
 
 
 

@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="054eeb96-06bb-47e1-91e2-d4a05e3dc004" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/算法.html" afterPath="$PROJECT_DIR$/算法.html" />
     </list>
@@ -28,8 +27,8 @@
       <file leaf-file-name="算法.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/算法.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="500">
-              <caret line="199" column="0" lean-forward="true" selection-start-line="199" selection-start-column="0" selection-end-line="199" selection-end-column="0" />
+            <state relative-caret-position="-383">
+              <caret line="287" column="17" lean-forward="true" selection-start-line="287" selection-start-column="17" selection-end-line="287" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -178,7 +177,8 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="682" />
+    <option name="x" value="510" />
+    <option name="y" value="30" />
     <option name="width" value="1177" />
     <option name="height" value="1080" />
   </component>
@@ -553,12 +553,12 @@
       <workItem from="1498469230210" duration="758000" />
       <workItem from="1499045605325" duration="1684000" />
       <workItem from="1499246315999" duration="1034000" />
-      <workItem from="1499324195769" duration="19000" />
+      <workItem from="1499324195769" duration="6785000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="532240000" />
+    <option name="totallyTimeSpent" value="539006000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -570,7 +570,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="682" y="0" width="1177" height="1080" extended-state="0" />
+    <frame x="510" y="30" width="1177" height="1080" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14218566" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -886,8 +886,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/算法.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
-          <caret line="199" column="0" lean-forward="true" selection-start-line="199" selection-start-column="0" selection-end-line="199" selection-end-column="0" />
+        <state relative-caret-position="-383">
+          <caret line="287" column="17" lean-forward="true" selection-start-line="287" selection-start-column="17" selection-end-line="287" selection-end-column="17" />
           <folding />
         </state>
       </provider>
